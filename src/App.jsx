@@ -3,7 +3,7 @@ import "./App.css";
 import { Main } from "./assets/Main";
 
 function App() {
-  const [hiddenCombination, setHiddenCombination] = useState([]);
+  const [hiddenCombination, setHiddenCombination] = useState([1, 2, 3, 4]);
   const colours = [
     "#d11141",
     "#00b159",
@@ -20,13 +20,14 @@ function App() {
       randomArray.push(colours[randomNumber]);
     }
     setHiddenCombination(randomArray);
-    console.log(hiddenCombination);
+    console.log(hiddenCombination[0]);
   };
 
+  console.log(hiddenCombination[1]);
   return (
     <>
       <button onClick={generateRandomArray}>generate</button>
-      <Main />
+      <Main hiddenCombination={hiddenCombination} />
     </>
   );
 }
