@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <button onClick={generateRandomArray}>generate</button>
-      <Main hiddenCombination={hiddenCombination} />
+      <Main hiddenCombination={hiddenCombination} colours={colours} />
     </>
   );
 }
