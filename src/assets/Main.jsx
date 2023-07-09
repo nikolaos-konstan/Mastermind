@@ -8,7 +8,7 @@ export const Main = ({ hiddenCombination, colours }) => {
     <div>
       <div className="grid-container-4">
         <HiddenCombo hiddenCombination={hiddenCombination} colours={colours} />
-        <TryLine />
+        <TryLine colours={colours} />
       </div>
     </div>
   );
