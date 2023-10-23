@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { SecretCombo } from "./Components/SecretCombo";
+import { TryLine } from "./Components/TryLine";
 
 function App() {
   //State of secret combination
@@ -34,6 +35,7 @@ function App() {
     <>
       {gameStart}
       <SecretCombo hiddenCombination={hiddenCombination} />
+      <TryLine colours={colours} />
     </>
   );
 }
