@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import { Main } from "./assets/Main";
 
 function App() {
   const [hiddenCombination, setHiddenCombination] = useState([1, 2, 3, 4]);
@@ -27,7 +26,6 @@ function App() {
   return (
     <>
       <button onClick={generateRandomArray}>generate</button>
-      <Main hiddenCombination={hiddenCombination} colours={colours} />
     </>
   );
 }
