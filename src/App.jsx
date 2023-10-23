@@ -27,10 +27,9 @@ function App() {
   //Conditional Rendering
   let gameStart = <button onClick={generateRandomArray}>Start Game</button>;
   if (hiddenCombination.length > 0) {
-    gameStart = <p>Game Started!</p>;
+    gameStart = <button onClick={generateRandomArray}>Restart Game</button>;
   }
 
-  console.log(hiddenCombination);
   return (
     <>
       {gameStart}
