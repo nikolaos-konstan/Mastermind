@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./App.css";
+import { SecretCombo } from "./Components/SecretCombo";
 
 function App() {
-  const [hiddenCombination, setHiddenCombination] = useState([1, 2, 3, 4]);
+  //State of secret combination
+  const [hiddenCombination, setHiddenCombination] = useState([]);
   const colours = [
     "#d11141",
     "#00b159",
@@ -12,6 +14,7 @@ function App() {
     "#d696bb",
   ];
 
+  //Generate Secret Combination
   const generateRandomArray = () => {
     const randomArray = [];
     for (let i = 0; i < 4; i++) {
@@ -19,13 +22,19 @@ function App() {
       randomArray.push(colours[randomNumber]);
     }
     setHiddenCombination(randomArray);
-    console.log(hiddenCombination[0]);
   };
 
-  console.log(hiddenCombination[1]);
+  //Conditional Rendering
+  let gameStart = <button onClick={generateRandomArray}>Start Game</button>;
+  if (hiddenCombination.length > 0) {
+    gameStart = <p>Game Started!</p>;
+  }
+
+  console.log(hiddenCombination);
   return (
     <>
-      <button onClick={generateRandomArray}>generate</button>
+      {gameStart}
+      <SecretCombo hiddenCombination={hiddenCombination} />
     </>
   );
 }
