@@ -14,6 +14,10 @@ function App() {
     "#ffc425",
     "#d696bb",
   ];
+  //submit a combination
+  const handleSubmit = () => {
+    console.log("submitted");
+  };
 
   //Generate Secret Combination
   const generateRandomArray = () => {

@@ -7,7 +7,6 @@ export const Box = ({ colours }) => {
     setCurrentIndex(currentIndex === colours.length - 1 ? 0 : currentIndex + 1);
   };
   let currentColour = colours[currentIndex];
-  console.log(currentIndex);
 
   return (
     <div
