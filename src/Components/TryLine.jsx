@@ -1,22 +1,23 @@
+/* eslint-disable no-case-declarations */
 import { useReducer } from "react";
 
 /* eslint-disable react/prop-types */
 export const TryLine = ({ colours }) => {
-  const array = colours;
-  const initialState = {
-    items: array,
-    currentIndex: 0,
-  };
+  // const array = colours;
+  // const initialState = {
+  //   items: array,
+  //   currentIndex: 0,
+  // };
 
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "next":
-        const newIndex = (state.currentIndex + 1) % state.items.length;
-        return { ...state, currentIndex: newIndex };
-      default:
-        return state;
-    }
-  };
+  // const reducer = (state, action) => {
+  //   switch (action.type) {
+  //     case "next":
+  //       const newIndex = (state.currentIndex + 1) % state.items.length;
+  //       return { ...state, currentIndex: newIndex };
+  //     default:
+  //       return state;
+  //   }
+  // };
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const currentItem = state.items[state.currentIndex];
