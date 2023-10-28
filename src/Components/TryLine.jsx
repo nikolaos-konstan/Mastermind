@@ -1,5 +1,6 @@
 /* eslint-disable no-case-declarations */
-import { useReducer } from "react";
+
+import { Box } from "./Box";
 
 /* eslint-disable react/prop-types */
 export const TryLine = ({ colours }) => {
@@ -19,20 +20,18 @@ export const TryLine = ({ colours }) => {
   //   }
   // };
 
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const currentItem = state.items[state.currentIndex];
   return (
     <div className="try-line">
       <div
         className="square"
-        style={{ backgroundColor: currentItem }}
-        onClick={() => dispatch({ type: "next" })}
+        //style={{ backgroundColor: currentItem }}
+        //onClick={() => dispatch({ type: "next" })}
       >
         1
       </div>
-      <div className="square">1</div>
-      <div className="square">1</div>
-      <div className="square">1</div>
+      <Box colours={colours} />
+      <Box />
+      <Box />
     </div>
   );
 };
