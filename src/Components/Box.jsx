@@ -1,11 +1,20 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 export const Box = ({ colours }) => {
-  const [colourPick, setColourPick] = useState(colours[0]);
-  console.log(colourPick);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleChange = () => {
+    setCurrentIndex(currentIndex === colours.length - 1 ? 0 : currentIndex + 1);
+  };
+  let currentColour = colours[currentIndex];
+  console.log(currentIndex);
 
   return (
-    <div className="square" style={{ backgroundColor: "#d11141" }}>
+    <div
+      className="square"
+      style={{ backgroundColor: currentColour }}
+      onClick={handleChange}
+    >
       1
     </div>
   );

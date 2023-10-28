@@ -30,8 +30,8 @@ export const TryLine = ({ colours }) => {
         1
       </div>
       <Box colours={colours} />
-      <Box />
-      <Box />
+      <Box colours={colours} />
+      <Box colours={colours} />
     </div>
   );
 };
