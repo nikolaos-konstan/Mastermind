@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { SecretCombo } from "./Components/SecretCombo";
 import { TryLine } from "./Components/TryLine";
+import { ResultBox } from "./Components/ResultBox";
 
 function App() {
   //State of secret combination
@@ -14,7 +15,7 @@ function App() {
     "#ffc425",
     "#d696bb",
   ];
-  // store the submitted lines and break them into groups in order to map them
+  // store the submitted lines
   const [submittedLines, setSubmittedLines] = useState([]);
   console.log("the submitted lines are " + submittedLines);
 
@@ -65,6 +66,15 @@ function App() {
     <>
       {gameStart}
       <SecretCombo hiddenCombination={hiddenCombination} />
+      {
+        <div className="grid-container">
+          {submittedLines.map((element, index) => (
+            <ResultBox key={index} element={element} className="grid-item">
+              {element}
+            </ResultBox>
+          ))}
+        </div>
+      }
       <TryLine colours={colours} submitCombo={submitCombo} />
     </>
   );

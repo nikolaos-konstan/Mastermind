@@ -5,10 +5,12 @@
   text-align: center;
 }
 
-.grid-container-4 {
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(10, 1fr); */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 2px;
+  width: 400px;
+  margin-bottom: 2px;
 }
 
 .hidden-combo {
