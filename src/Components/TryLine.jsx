@@ -25,7 +25,7 @@ export const TryLine = ({ colours, submitCombo }) => {
     submittedCombination[index] = currentColour;
   };
 
-  const handleSubmit = (submittedCombination) => {
+  const handleSubmit = () => {
     submitCombo(submittedCombination);
     console.log(submittedCombination);
   };
