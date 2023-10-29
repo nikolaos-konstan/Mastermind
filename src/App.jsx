@@ -37,7 +37,6 @@ function App() {
 
   const submitCombo = (combo) => {
     console.log("the submitted combo is " + combo);
-    console.log("hi");
   };
 
   return (

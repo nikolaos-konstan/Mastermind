@@ -9,7 +9,7 @@ export const Box = ({ position, colours, handleColourChange }) => {
   let currentColour = colours[currentIndex];
 
   useEffect(() => {
-    handleColourChange(currentColour, position);
+    handleColourChange(currentColour, position); //lift the state up to TryLine
   }, [currentColour, handleColourChange, position]);
 
   return (
