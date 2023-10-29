@@ -19,6 +19,9 @@ export const TryLine = ({ colours }) => {
   //       return state;
   //   }
   // };
+  const handleColourChange = (currentColour) => {
+    console.log(currentColour);
+  };
 
   return (
     <div className="try-line">
@@ -29,9 +32,9 @@ export const TryLine = ({ colours }) => {
       >
         1
       </div>
-      <Box colours={colours} />
-      <Box colours={colours} />
-      <Box colours={colours} />
+      <Box colours={colours} handleColourChange={handleColourChange} />
+      <Box colours={colours} handleColourChange={handleColourChange} />
+      <Box colours={colours} handleColourChange={handleColourChange} />
     </div>
   );
 };
