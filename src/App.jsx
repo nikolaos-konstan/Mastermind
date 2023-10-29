@@ -15,9 +15,9 @@ function App() {
     "#d696bb",
   ];
   //submit a combination
-  const handleSubmit = () => {
-    console.log("submitted");
-  };
+  // const handleSubmit = () => {
+  //   console.log("submitted");
+  // };
 
   //Generate Secret Combination
   const generateRandomArray = () => {
@@ -35,11 +35,15 @@ function App() {
     gameStart = <button onClick={generateRandomArray}>Restart Game</button>;
   }
 
+  const submitCombo = (combo) => {
+    console.log("the submitted combo is " + combo);
+  };
+
   return (
     <>
       {gameStart}
       <SecretCombo hiddenCombination={hiddenCombination} />
-      <TryLine colours={colours} />
+      <TryLine colours={colours} submitCombo={submitCombo} />
     </>
   );
 }

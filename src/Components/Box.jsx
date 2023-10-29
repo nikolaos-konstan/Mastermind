@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 
 export const Box = ({ position, colours, handleColourChange }) => {
-  console.log(position);
   const [currentIndex, setCurrentIndex] = useState(0);
   const handleChange = () => {
     setCurrentIndex(currentIndex === colours.length - 1 ? 0 : currentIndex + 1);

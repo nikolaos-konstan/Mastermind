@@ -3,7 +3,7 @@
 import { Box } from "./Box";
 
 /* eslint-disable react/prop-types */
-export const TryLine = ({ colours }) => {
+export const TryLine = ({ colours, submitCombo }) => {
   // const array = colours;
   // const initialState = {
   //   items: array,
@@ -22,8 +22,11 @@ export const TryLine = ({ colours }) => {
   let submittedCombination = ["no", "no", "no", "no"];
 
   const handleColourChange = (currentColour, index) => {
-    console.log(currentColour);
     submittedCombination[index] = currentColour;
+  };
+
+  const handleSubmit = (submittedCombination) => {
+    submitCombo(submittedCombination);
     console.log(submittedCombination);
   };
 
@@ -37,6 +40,7 @@ export const TryLine = ({ colours }) => {
           handleColourChange={handleColourChange}
         />
       ))}
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 };
