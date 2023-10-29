@@ -14,10 +14,9 @@ function App() {
     "#ffc425",
     "#d696bb",
   ];
-  //submit a combination
-  // const handleSubmit = () => {
-  //   console.log("submitted");
-  // };
+  // store the submitted lines and break them into groups in order to map them
+  const [submittedLines, setSubmittedLines] = useState([]);
+  console.log("the submitted lines are " + submittedLines);
 
   //Generate Secret Combination
   const generateRandomArray = () => {
@@ -34,8 +33,9 @@ function App() {
   if (hiddenCombination.length > 0) {
     gameStart = <button onClick={generateRandomArray}>Restart Game</button>;
   }
-
+  //submit a combination and compare
   const submitCombo = (combo) => {
+    setSubmittedLines((prevArray) => [...prevArray, combo]);
     console.log("the submitted combo is " + combo);
     if (combo.length !== hiddenCombination.length) {
       throw new Error("Arrays must be of the same size");

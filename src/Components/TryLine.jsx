@@ -27,7 +27,6 @@ export const TryLine = ({ colours, submitCombo }) => {
 
   const handleSubmit = () => {
     submitCombo(submittedCombination);
-    console.log(submittedCombination);
   };
 
   return (
