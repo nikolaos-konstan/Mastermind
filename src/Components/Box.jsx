@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
-export const Box = ({ colours, handleColourChange }) => {
+export const Box = ({ position, colours, handleColourChange }) => {
+  console.log(position);
   const [currentIndex, setCurrentIndex] = useState(0);
   const handleChange = () => {
     setCurrentIndex(currentIndex === colours.length - 1 ? 0 : currentIndex + 1);
@@ -9,8 +10,8 @@ export const Box = ({ colours, handleColourChange }) => {
   let currentColour = colours[currentIndex];
 
   useEffect(() => {
-    handleColourChange(currentColour);
-  }, [currentColour, handleColourChange]);
+    handleColourChange(currentColour, position);
+  }, [currentColour, handleColourChange, position]);
 
   return (
     <div

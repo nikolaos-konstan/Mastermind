@@ -19,22 +19,24 @@ export const TryLine = ({ colours }) => {
   //       return state;
   //   }
   // };
-  const handleColourChange = (currentColour) => {
+  let submittedCombination = ["no", "no", "no", "no"];
+
+  const handleColourChange = (currentColour, index) => {
     console.log(currentColour);
+    submittedCombination[index] = currentColour;
+    console.log(submittedCombination);
   };
 
   return (
     <div className="try-line">
-      <div
-        className="square"
-        //style={{ backgroundColor: currentItem }}
-        //onClick={() => dispatch({ type: "next" })}
-      >
-        1
-      </div>
-      <Box colours={colours} handleColourChange={handleColourChange} />
-      <Box colours={colours} handleColourChange={handleColourChange} />
-      <Box colours={colours} handleColourChange={handleColourChange} />
+      {[...Array(4)].map((ele, index) => (
+        <Box
+          key={index}
+          position={index}
+          colours={colours}
+          handleColourChange={handleColourChange}
+        />
+      ))}
     </div>
   );
 };
