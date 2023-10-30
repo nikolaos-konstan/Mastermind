@@ -20,8 +20,8 @@ function App() {
   console.log("the submitted lines are " + submittedLines);
 
   //state of the number of correct answers
-  const [countAll, setCountAll] = useState(0);
-  const [countSameIndex, setCountSameIndex] = useState(0);
+  const [samePosition, setSamePosition] = useState(0);
+  const [sameColour, setSameColour] = useState(0);
 
   //Generate Secret Combination
   const generateRandomArray = () => {
@@ -40,9 +40,6 @@ function App() {
   }
   //submit a combination and compare
 
-  console.log("outside " + countSameIndex);
-  console.log("outside " + countAll);
-
   const submitCombo = (combo) => {
     setSubmittedLines((prevArray) => [...prevArray, combo]);
     console.log("the submitted combo is " + combo);
@@ -50,17 +47,20 @@ function App() {
       throw new Error("Arrays must be of the same size");
     }
 
+    let countAll = 0; // To count elements appearing in both arrays regardless of index
+    let countSameIndex = 0; // To count elements appearing in the same index in both arrays
+
     for (let i = 0; i < combo.length; i++) {
       if (hiddenCombination.includes(combo[i])) {
-        setCountAll((prev) => prev + 1);
+        countAll++;
         if (combo[i] === hiddenCombination[i]) {
-          setCountSameIndex((prev) => prev + 1);
+          countSameIndex++;
         }
       }
     }
 
-    console.log(countAll - countSameIndex);
-    console.log("the correcto ones are " + countSameIndex);
+    setSameColour(countAll - countSameIndex);
+    setSamePosition(countSameIndex);
     // return {
     //   countAll,
     //   countSameIndex,
@@ -77,8 +77,8 @@ function App() {
             <ResultBox
               key={index}
               element={element}
-              countAll={countAll}
-              countSameIndex={countSameIndex}
+              samePosition={samePosition}
+              sameColour={sameColour}
               className="grid-item"
             >
               {element}

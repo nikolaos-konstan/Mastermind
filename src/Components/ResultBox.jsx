@@ -1,18 +1,16 @@
 /* eslint-disable react/prop-types */
-export const ResultBox = ({ element, countSameIndex, countAll }) => {
-  console.log("inside " + countSameIndex);
-  console.log("inside " + countAll);
-  // let resultArray = [];
-  // for (let i = 0; i <= countSameIndex; i++) {
-  //   resultArray.push("#00FF00");
-  // }
-  // for (let i = 0; i <= countAll - countSameIndex; i++) {
-  //   resultArray.push("#FFA500");
-  // }
-  // for (let i = 0; i <= 4 - resultArray.lenght; i++) {
-  //   resultArray.push("#FF0000");
-  // }
-  // console.log(resultArray);
+export const ResultBox = ({ element, sameColour, samePosition }) => {
+  let resultArray = [];
+  for (let i = samePosition; i > 0; i--) {
+    resultArray.push("#00FF00");
+  }
+  for (let i = sameColour; i > 0; i--) {
+    resultArray.push("#FFA500");
+  }
+  for (let i = 4; i > resultArray.lenght; i--) {
+    resultArray.push("#FF0000");
+  }
+  console.log(resultArray);
 
   return (
     <>
