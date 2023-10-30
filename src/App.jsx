@@ -49,30 +49,28 @@ function App() {
 
     let countAll = 0; // To count elements appearing in both arrays regardless of index
     let countSameIndex = 0; // To count elements appearing in the same index in both arrays
+    const countMapArray1 = new Map();
+    const countMapArray2 = new Map();
 
-    // for (let i = 0; i < combo.length; i++) {
-    //   if (hiddenCombination.includes(combo[i])) {
-    //     countAll++;
-
-    //     if (combo[i] === hiddenCombination[i]) {
-    //       countSameIndex++;
-    //     }
-    //   }
-    // }
     for (let i = 0; i < combo.length; i++) {
       if (combo[i] === hiddenCombination[i]) {
         countSameIndex++;
-      } else if (hiddenCombination.includes(combo[i])) {
-        countAll++;
       }
+      countMapArray1.set(combo[i], (countMapArray1.get(combo[i]) || 0) + 1);
+      countMapArray2.set(
+        hiddenCombination[i],
+        (countMapArray2.get(hiddenCombination[i]) || 0) + 1
+      );
     }
 
-    setSameColour(countAll);
+    countMapArray1.forEach((count, element) => {
+      if (countMapArray2.has(element)) {
+        countAll += Math.min(count, countMapArray2.get(element));
+      }
+    });
+
+    setSameColour(countAll - countSameIndex);
     setSamePosition(countSameIndex);
-    // return {
-    //   countAll,
-    //   countSameIndex,
-    // };
   };
 
   return (

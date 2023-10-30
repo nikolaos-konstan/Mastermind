@@ -2,17 +2,17 @@
 export const ResultBox = ({ element, sameColour, samePosition }) => {
   console.log("same position" + samePosition);
   console.log("different positon" + sameColour);
-  // let resultArray = [];
-  // for (let i = samePosition; i > 0; i--) {
-  //   resultArray.push("#00FF00");
-  // }
-  // for (let i = sameColour; i > 0; i--) {
-  //   resultArray.push("#FFA500");
-  // }
-  // for (let i = 4; i > resultArray.length; i--) {
-  //   resultArray.push("#FF0000");
-  // }
-  // console.log(resultArray);
+  let resultArray = [];
+  for (let i = samePosition; i > 0; i--) {
+    resultArray.push("#00FF00");
+  }
+  for (let i = sameColour; i > 0; i--) {
+    resultArray.push("#FFA500");
+  }
+  for (let i = 4; i > resultArray.length; i--) {
+    resultArray.push("#FF0000");
+  }
+  console.log(resultArray);
 
   return (
     <>
