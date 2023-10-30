@@ -73,6 +73,9 @@ function App() {
     setSamePosition(countSameIndex);
   };
 
+  let greens = samePosition;
+  let oranges = sameColour;
+
   return (
     <>
       {gameStart}
@@ -83,8 +86,8 @@ function App() {
             <ResultBox
               key={index}
               element={element}
-              samePosition={samePosition}
-              sameColour={sameColour}
+              greens={greens}
+              oranges={oranges}
               className="grid-item"
             >
               {element}

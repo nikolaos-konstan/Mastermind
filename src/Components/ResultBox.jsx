@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
-export const ResultBox = ({ element, sameColour, samePosition }) => {
-  console.log("same position" + samePosition);
-  console.log("different positon" + sameColour);
+export const ResultBox = ({ element, oranges, greens }) => {
+  console.log("same position" + greens);
+  console.log("different positon" + oranges);
   let resultArray = [];
-  for (let i = samePosition; i > 0; i--) {
+  for (let i = greens; i > 0; i--) {
     resultArray.push("#00FF00");
   }
-  for (let i = sameColour; i > 0; i--) {
+  for (let i = oranges; i > 0; i--) {
     resultArray.push("#FFA500");
   }
   for (let i = 4; i > resultArray.length; i--) {
@@ -21,7 +21,7 @@ export const ResultBox = ({ element, sameColour, samePosition }) => {
       <div className="square" style={{ backgroundColor: element[2] }}></div>
       <div className="square" style={{ backgroundColor: element[3] }}></div>
       <div className="grid-container-results">
-        <div className="grid-item-results">{sameColour}</div>
+        <div className="grid-item-results">{oranges}</div>
         <div className="grid-item-results">1</div>
         <div className="grid-item-results">1</div>
         <div className="grid-item-results">1</div>
