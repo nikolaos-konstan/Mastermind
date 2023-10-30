@@ -50,17 +50,24 @@ function App() {
     let countAll = 0; // To count elements appearing in both arrays regardless of index
     let countSameIndex = 0; // To count elements appearing in the same index in both arrays
 
-    for (let i = 0; i < combo.length; i++) {
-      if (hiddenCombination.includes(combo[i])) {
-        countAll++;
+    // for (let i = 0; i < combo.length; i++) {
+    //   if (hiddenCombination.includes(combo[i])) {
+    //     countAll++;
 
-        if (combo[i] === hiddenCombination[i]) {
-          countSameIndex++;
-        }
+    //     if (combo[i] === hiddenCombination[i]) {
+    //       countSameIndex++;
+    //     }
+    //   }
+    // }
+    for (let i = 0; i < combo.length; i++) {
+      if (combo[i] === hiddenCombination[i]) {
+        countSameIndex++;
+      } else if (hiddenCombination.includes(combo[i])) {
+        countAll++;
       }
     }
 
-    setSameColour(countAll - countSameIndex);
+    setSameColour(countAll);
     setSamePosition(countSameIndex);
     // return {
     //   countAll,
