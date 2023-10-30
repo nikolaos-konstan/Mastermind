@@ -53,6 +53,7 @@ function App() {
     for (let i = 0; i < combo.length; i++) {
       if (hiddenCombination.includes(combo[i])) {
         countAll++;
+
         if (combo[i] === hiddenCombination[i]) {
           countSameIndex++;
         }
