@@ -19,6 +19,10 @@ function App() {
   const [submittedLines, setSubmittedLines] = useState([]);
   console.log("the submitted lines are " + submittedLines);
 
+  //state of the number of correct answers
+  const [countAll, setCountAll] = useState(0);
+  const [countSameIndex, setCountSameIndex] = useState(0);
+
   //Generate Secret Combination
   const generateRandomArray = () => {
     const randomArray = [];
@@ -35,8 +39,10 @@ function App() {
     gameStart = <button onClick={generateRandomArray}>Restart Game</button>;
   }
   //submit a combination and compare
-  let countAll = 0; // To count elements appearing in both arrays regardless of index
-  let countSameIndex = 0; // To count elements appearing in the same index in both arrays
+
+  console.log("outside " + countSameIndex);
+  console.log("outside " + countAll);
+
   const submitCombo = (combo) => {
     setSubmittedLines((prevArray) => [...prevArray, combo]);
     console.log("the submitted combo is " + combo);
@@ -46,15 +52,15 @@ function App() {
 
     for (let i = 0; i < combo.length; i++) {
       if (hiddenCombination.includes(combo[i])) {
-        countAll++;
+        setCountAll((prev) => prev + 1);
         if (combo[i] === hiddenCombination[i]) {
-          countSameIndex++;
+          setCountSameIndex((prev) => prev + 1);
         }
       }
     }
 
     console.log(countAll - countSameIndex);
-    console.log(countSameIndex);
+    console.log("the correcto ones are " + countSameIndex);
     // return {
     //   countAll,
     //   countSameIndex,
