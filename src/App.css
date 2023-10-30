@@ -7,10 +7,23 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  grid-template-columns: repeat(5, 1fr); /* 4 items per row */
   gap: 2px;
   width: 400px;
   margin-bottom: 2px;
+}
+
+.grid-container-results {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 50px 50px; /* Two columns of 50px each */
+  grid-template-rows: 50px 50px; /* Two rows of 50px each */
+  width: 100px; /* Width of the container */
+  height: 100px; /* Height of the container */
+}
+
+.grid-item-results {
+  border: 1px solid #000; /* Optional: Border for visualization */
 }
 
 .hidden-combo {

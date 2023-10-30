@@ -35,15 +35,14 @@ function App() {
     gameStart = <button onClick={generateRandomArray}>Restart Game</button>;
   }
   //submit a combination and compare
+  let countAll = 0; // To count elements appearing in both arrays regardless of index
+  let countSameIndex = 0; // To count elements appearing in the same index in both arrays
   const submitCombo = (combo) => {
     setSubmittedLines((prevArray) => [...prevArray, combo]);
     console.log("the submitted combo is " + combo);
     if (combo.length !== hiddenCombination.length) {
       throw new Error("Arrays must be of the same size");
     }
-
-    let countAll = 0; // To count elements appearing in both arrays regardless of index
-    let countSameIndex = 0; // To count elements appearing in the same index in both arrays
 
     for (let i = 0; i < combo.length; i++) {
       if (hiddenCombination.includes(combo[i])) {
@@ -69,7 +68,13 @@ function App() {
       {
         <div className="grid-container">
           {submittedLines.map((element, index) => (
-            <ResultBox key={index} element={element} className="grid-item">
+            <ResultBox
+              key={index}
+              element={element}
+              countAll={countAll}
+              countSameIndex={countSameIndex}
+              className="grid-item"
+            >
               {element}
             </ResultBox>
           ))}
