@@ -19,10 +19,6 @@ function App() {
   const [submittedLines, setSubmittedLines] = useState([]);
   console.log("the submitted lines are " + submittedLines);
 
-  //state of the number of correct answers
-  const [samePosition, setSamePosition] = useState(0);
-  const [sameColour, setSameColour] = useState(0);
-
   //Generate Secret Combination
   const generateRandomArray = () => {
     const randomArray = [];
@@ -42,39 +38,7 @@ function App() {
 
   const submitCombo = (combo) => {
     setSubmittedLines((prevArray) => [...prevArray, combo]);
-    console.log("the submitted combo is " + combo);
-    if (combo.length !== hiddenCombination.length) {
-      throw new Error("Arrays must be of the same size");
-    }
-
-    let countAll = 0; // To count elements appearing in both arrays regardless of index
-    let countSameIndex = 0; // To count elements appearing in the same index in both arrays
-    const countMapArray1 = new Map();
-    const countMapArray2 = new Map();
-
-    for (let i = 0; i < combo.length; i++) {
-      if (combo[i] === hiddenCombination[i]) {
-        countSameIndex++;
-      }
-      countMapArray1.set(combo[i], (countMapArray1.get(combo[i]) || 0) + 1);
-      countMapArray2.set(
-        hiddenCombination[i],
-        (countMapArray2.get(hiddenCombination[i]) || 0) + 1
-      );
-    }
-
-    countMapArray1.forEach((count, element) => {
-      if (countMapArray2.has(element)) {
-        countAll += Math.min(count, countMapArray2.get(element));
-      }
-    });
-
-    setSameColour(countAll - countSameIndex);
-    setSamePosition(countSameIndex);
   };
-
-  let greens = samePosition;
-  let oranges = sameColour;
 
   return (
     <>
@@ -86,8 +50,7 @@ function App() {
             <ResultBox
               key={index}
               element={element}
-              greens={greens}
-              oranges={oranges}
+              group={index}
               className="grid-item"
             >
               {element}

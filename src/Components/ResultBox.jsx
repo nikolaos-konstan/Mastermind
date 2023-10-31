@@ -1,17 +1,41 @@
+import { useState } from "react";
+
 /* eslint-disable react/prop-types */
-export const ResultBox = ({ element, oranges, greens }) => {
-  console.log("same position" + greens);
-  console.log("different positon" + oranges);
+export const ResultBox = ({ element }) => {
+  //state of the number of correct answers
+  const [samePosition, setSamePosition] = useState(0);
+  const [sameColour, setSameColour] = useState(0);
   let resultArray = [];
-  for (let i = greens; i > 0; i--) {
-    resultArray.push("#00FF00");
-  }
-  for (let i = oranges; i > 0; i--) {
-    resultArray.push("#FFA500");
-  }
-  for (let i = 4; i > resultArray.length; i--) {
-    resultArray.push("#FF0000");
-  }
+
+  // if (combo.length !== hiddenCombination.length) {
+  //   throw new Error("Arrays must be of the same size");
+  // }
+
+  // let countAll = 0; // To count elements appearing in both arrays regardless of index
+  // let countSameIndex = 0; // To count elements appearing in the same index in both arrays
+  // const countMapArray1 = new Map();
+  // const countMapArray2 = new Map();
+
+  // for (let i = 0; i < combo.length; i++) {
+  //   if (combo[i] === hiddenCombination[i]) {
+  //     countSameIndex++;
+  //   }
+  //   countMapArray1.set(combo[i], (countMapArray1.get(combo[i]) || 0) + 1);
+  //   countMapArray2.set(
+  //     hiddenCombination[i],
+  //     (countMapArray2.get(hiddenCombination[i]) || 0) + 1
+  //   );
+  // }
+
+  // countMapArray1.forEach((count, element) => {
+  //   if (countMapArray2.has(element)) {
+  //     countAll += Math.min(count, countMapArray2.get(element));
+  //   }
+  // });
+
+  // setSameColour(countAll - countSameIndex);
+  // setSamePosition(countSameIndex);
+
   console.log(resultArray);
 
   return (
@@ -21,7 +45,7 @@ export const ResultBox = ({ element, oranges, greens }) => {
       <div className="square" style={{ backgroundColor: element[2] }}></div>
       <div className="square" style={{ backgroundColor: element[3] }}></div>
       <div className="grid-container-results">
-        <div className="grid-item-results">{oranges}</div>
+        <div className="grid-item-results"></div>
         <div className="grid-item-results">1</div>
         <div className="grid-item-results">1</div>
         <div className="grid-item-results">1</div>
