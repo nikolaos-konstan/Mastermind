@@ -50,7 +50,9 @@ function App() {
             <ResultBox
               key={index}
               element={element}
-              group={index}
+              index={index}
+              submittedLines={submittedLines}
+              hiddenCombination={hiddenCombination}
               className="grid-item"
             >
               {element}

@@ -1,40 +1,47 @@
 import { useState } from "react";
 
 /* eslint-disable react/prop-types */
-export const ResultBox = ({ element }) => {
+export const ResultBox = ({
+  element,
+  index,
+  submittedLines,
+  hiddenCombination,
+}) => {
   //state of the number of correct answers
   const [samePosition, setSamePosition] = useState(0);
   const [sameColour, setSameColour] = useState(0);
-  let resultArray = [];
 
-  // if (combo.length !== hiddenCombination.length) {
-  //   throw new Error("Arrays must be of the same size");
-  // }
+  let combo = submittedLines[index];
+  console.log("the result array is " + resultArray);
 
-  // let countAll = 0; // To count elements appearing in both arrays regardless of index
-  // let countSameIndex = 0; // To count elements appearing in the same index in both arrays
-  // const countMapArray1 = new Map();
-  // const countMapArray2 = new Map();
+  if (combo.length !== hiddenCombination.length) {
+    throw new Error("Arrays must be of the same size");
+  }
 
-  // for (let i = 0; i < combo.length; i++) {
-  //   if (combo[i] === hiddenCombination[i]) {
-  //     countSameIndex++;
-  //   }
-  //   countMapArray1.set(combo[i], (countMapArray1.get(combo[i]) || 0) + 1);
-  //   countMapArray2.set(
-  //     hiddenCombination[i],
-  //     (countMapArray2.get(hiddenCombination[i]) || 0) + 1
-  //   );
-  // }
+  let countAll = 0; // To count elements appearing in both arrays regardless of index
+  let countSameIndex = 0; // To count elements appearing in the same index in both arrays
+  const countMapArray1 = new Map();
+  const countMapArray2 = new Map();
 
-  // countMapArray1.forEach((count, element) => {
-  //   if (countMapArray2.has(element)) {
-  //     countAll += Math.min(count, countMapArray2.get(element));
-  //   }
-  // });
+  for (let i = 0; i < combo.length; i++) {
+    if (combo[i] === hiddenCombination[i]) {
+      countSameIndex++;
+    }
+    countMapArray1.set(combo[i], (countMapArray1.get(combo[i]) || 0) + 1);
+    countMapArray2.set(
+      hiddenCombination[i],
+      (countMapArray2.get(hiddenCombination[i]) || 0) + 1
+    );
+  }
 
-  // setSameColour(countAll - countSameIndex);
-  // setSamePosition(countSameIndex);
+  countMapArray1.forEach((count, element) => {
+    if (countMapArray2.has(element)) {
+      countAll += Math.min(count, countMapArray2.get(element));
+    }
+  });
+
+  setSameColour(countAll - countSameIndex);
+  setSamePosition(countSameIndex);
 
   console.log(resultArray);
 
