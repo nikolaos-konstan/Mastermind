@@ -44,8 +44,17 @@ export const ResultBox = ({
     setSamePosition(countSameIndex);
   }, [combo, hiddenCombination]);
 
+  const lights = ["#FF0000", "#FF0000", "#FF0000", "#FF0000"];
+  for (let i = 0; i < samePosition; i++) {
+    lights[i] = "#00FF00";
+  }
+  for (let i = 0; i < sameColour; i++) {
+    lights[samePosition + i] = "#FFA500";
+  }
+
   console.log(samePosition + " elements are in the correct position");
   console.log(sameColour + " elements are in the wrong position");
+  console.log(lights);
 
   return (
     <>
@@ -54,10 +63,22 @@ export const ResultBox = ({
       <div className="square" style={{ backgroundColor: element[2] }}></div>
       <div className="square" style={{ backgroundColor: element[3] }}></div>
       <div className="grid-container-results">
-        <div className="grid-item-results">{samePosition}</div>
-        <div className="grid-item-results">{sameColour}</div>
-        <div className="grid-item-results">1</div>
-        <div className="grid-item-results">1</div>
+        <div
+          className="grid-item-results"
+          style={{ backgroundColor: lights[0] }}
+        ></div>
+        <div
+          className="grid-item-results"
+          style={{ backgroundColor: lights[1] }}
+        ></div>
+        <div
+          className="grid-item-results"
+          style={{ backgroundColor: lights[2] }}
+        ></div>
+        <div
+          className="grid-item-results"
+          style={{ backgroundColor: lights[3] }}
+        ></div>
       </div>
     </>
   );
