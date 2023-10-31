@@ -42,7 +42,7 @@ export const ResultBox = ({
 
     setSameColour(countAll - countSameIndex);
     setSamePosition(countSameIndex);
-  });
+  }, [combo, hiddenCombination]);
 
   console.log(samePosition + " elements are in the correct position");
   console.log(sameColour + " elements are in the wrong position");
