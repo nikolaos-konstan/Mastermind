@@ -5,8 +5,6 @@ import { TryLine } from "./Components/TryLine";
 import { ResultBox } from "./Components/ResultBox";
 
 function App() {
-  //state of winning
-
   //State of secret combination
   const [hiddenCombination, setHiddenCombination] = useState([]);
   const colours = [
@@ -29,6 +27,7 @@ function App() {
       randomArray.push(colours[randomNumber]);
     }
     setHiddenCombination(randomArray);
+    setSubmittedLines([]);
   };
 
   //Conditional Rendering

@@ -7,7 +7,6 @@ export const ResultBox = ({
   submittedLines,
   hiddenCombination,
 }) => {
-  const [win, setWin] = useState(false);
   //state of the number of correct answers
   const [samePosition, setSamePosition] = useState(0);
   const [sameColour, setSameColour] = useState(0);

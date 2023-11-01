@@ -15,7 +15,9 @@ export const Box = ({ position, colours, handleColourChange }) => {
   return (
     <div
       className="square"
-      style={{ backgroundColor: currentColour }}
+      style={{
+        backgroundColor: currentColour,
+      }}
       onClick={handleChange}
     >
       1
