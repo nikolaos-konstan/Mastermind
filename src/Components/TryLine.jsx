@@ -3,7 +3,7 @@
 import { Box } from "./Box";
 
 /* eslint-disable react/prop-types */
-export const TryLine = ({ colours, submitCombo }) => {
+export const TryLine = ({ colours, submitCombo, hiddenCombination }) => {
   let submittedCombination = ["no", "no", "no", "no"];
 
   const handleColourChange = (currentColour, index) => {
@@ -22,6 +22,7 @@ export const TryLine = ({ colours, submitCombo }) => {
           position={index}
           colours={colours}
           handleColourChange={handleColourChange}
+          hiddenCombination={hiddenCombination}
         />
       ))}
       <button onClick={handleSubmit}>Submit</button>

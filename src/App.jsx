@@ -62,7 +62,11 @@ function App() {
         </div>
       }
       {hiddenCombination.length > 0 && (
-        <TryLine colours={colours} submitCombo={submitCombo} />
+        <TryLine
+          colours={colours}
+          submitCombo={submitCombo}
+          hiddenCombination={hiddenCombination}
+        />
       )}
     </>
   );
