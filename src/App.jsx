@@ -3,6 +3,7 @@ import "./App.css";
 import { SecretCombo } from "./Components/SecretCombo";
 import { TryLine } from "./Components/TryLine";
 import { ResultBox } from "./Components/ResultBox";
+import { ResultModal } from "./Components/ResultModal";
 
 function App() {
   //State of secret combination
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <>
+      <ResultModal />
       {gameStart}
       <SecretCombo hiddenCombination={hiddenCombination} />
       {
