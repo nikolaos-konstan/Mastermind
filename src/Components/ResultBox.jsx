@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ResultModal } from "./ResultModal";
 
 /* eslint-disable react/prop-types */
 export const ResultBox = ({
@@ -80,7 +81,7 @@ export const ResultBox = ({
           style={{ backgroundColor: lights[3] }}
         ></div>
       </div>
-      {lights[3] === "#00FF00" && <p>You won</p>}
+      {lights[3] === "#00FF00" && <ResultModal />}
     </>
   );
 };

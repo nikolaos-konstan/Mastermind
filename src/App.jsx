@@ -44,7 +44,6 @@ function App() {
 
   return (
     <>
-      <ResultModal />
       {gameStart}
       <SecretCombo hiddenCombination={hiddenCombination} />
       {
