@@ -7,6 +7,7 @@ export const ResultBox = ({
   index,
   submittedLines,
   hiddenCombination,
+  generateRandomArray,
 }) => {
   //state of the number of correct answers
   const [samePosition, setSamePosition] = useState(0);
@@ -81,7 +82,9 @@ export const ResultBox = ({
           style={{ backgroundColor: lights[3] }}
         ></div>
       </div>
-      {lights[3] === "#00FF00" && <ResultModal />}
+      {lights[3] === "#00FF00" && (
+        <ResultModal generateRandomArray={generateRandomArray} />
+      )}
     </>
   );
 };

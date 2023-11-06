@@ -3,7 +3,6 @@ import "./App.css";
 import { SecretCombo } from "./Components/SecretCombo";
 import { TryLine } from "./Components/TryLine";
 import { ResultBox } from "./Components/ResultBox";
-import { ResultModal } from "./Components/ResultModal";
 
 function App() {
   //State of secret combination
@@ -55,6 +54,7 @@ function App() {
               index={index}
               submittedLines={submittedLines}
               hiddenCombination={hiddenCombination}
+              generateRandomArray={generateRandomArray}
               className="grid-item"
             >
               {element}
