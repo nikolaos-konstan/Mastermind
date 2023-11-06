@@ -42,3 +42,9 @@
   width: 100px;
   height: 100px;
 }
+.hd-square {
+  background-color: orange; /* Adjust the background color of the squares */
+  color: black;
+  width: 100px;
+  height: 100px;
+}

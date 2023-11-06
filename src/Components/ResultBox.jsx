@@ -14,7 +14,6 @@ export const ResultBox = ({
   const [sameColour, setSameColour] = useState(0);
 
   let combo = submittedLines[index];
-  console.log("the result array is " + combo);
   useEffect(() => {
     if (combo.length !== hiddenCombination.length) {
       throw new Error("Arrays must be of the same size");
@@ -53,10 +52,6 @@ export const ResultBox = ({
   for (let i = 0; i < sameColour; i++) {
     lights[samePosition + i] = "#FFA500";
   }
-
-  console.log(samePosition + " elements are in the correct position");
-  console.log(sameColour + " elements are in the wrong position");
-  console.log(lights);
 
   return (
     <>
