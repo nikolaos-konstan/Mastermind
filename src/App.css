@@ -4,9 +4,21 @@
   padding: 2rem;
   text-align: center;
 }
+body {
+  background-color: #ccf3ee;
+}
+
+.main-game {
+  border: 1px solid #84a6d6; /* Border style */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  background-color: #f8ecd1; /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
 
 .grid-container {
   display: grid;
+
   grid-template-columns: repeat(5, 1fr); /* 4 items per row */
   gap: 2px;
   width: 400px;
@@ -47,4 +59,8 @@
   color: black;
   width: 100px;
   height: 100px;
+}
+
+.start-btn {
+  background-color: aqua;
 }
