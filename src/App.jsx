@@ -57,7 +57,7 @@ function App() {
         submittedLines={submittedLines}
       />
       {
-        <div className="grid-container">
+        <div>
           {submittedLines.map((element, index) => (
             <ResultBox
               key={index}

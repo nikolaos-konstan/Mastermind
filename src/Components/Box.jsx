@@ -23,7 +23,7 @@ export const Box = ({
 
   return (
     <div
-      className="square"
+      className="try-square"
       style={{
         backgroundColor: currentColour,
       }}

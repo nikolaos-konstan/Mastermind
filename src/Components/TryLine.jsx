@@ -25,7 +25,9 @@ export const TryLine = ({ colours, submitCombo, hiddenCombination }) => {
           hiddenCombination={hiddenCombination}
         />
       ))}
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="submit-button" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
 };

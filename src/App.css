@@ -16,44 +16,14 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
 }
 
-.grid-container {
-  display: grid;
-
-  grid-template-columns: repeat(5, 1fr); /* 4 items per row */
-  gap: 2px;
-  width: 400px;
-  margin-bottom: 2px;
-}
-
-.grid-container-results {
-  background-color: aqua;
-  display: grid;
-  grid-template-columns: 50px 50px; /* Two columns of 50px each */
-  grid-template-rows: 50px 50px; /* Two rows of 50px each */
-  width: 100px; /* Width of the container */
-  height: 100px; /* Height of the container */
-}
-
-.grid-item-results {
-  border: 1px solid #000; /* Optional: Border for visualization */
-}
-
 .hidden-combo {
   display: flex;
+  width: 500px;
   gap: 2px;
   margin-bottom: 2px;
+  justify-content: center;
 }
 
-.try-line {
-  display: flex;
-  gap: 2px;
-}
-.square {
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
-  margin: 5px;
-}
 .hd-square {
   background-color: brown; /* Adjust the background color of the squares */
   color: gold;
@@ -62,7 +32,7 @@ body {
   width: 80px;
   height: 80px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 40px;
 }
 
 .hd-content {
@@ -72,6 +42,85 @@ body {
   align-items: center;
   height: 100%;
   font-size: 35px;
+}
+
+.grid-container-lines {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  width: 500px;
+}
+
+.grid-container-results {
+  display: grid;
+  grid-template-columns: 40px 40px; /* Two columns of 40px each */
+  grid-template-rows: 40px 40px; /* Two rows of 50px each */
+  width: 80px; /* Width of the container */
+  height: 80px; /* Height of the container */
+  border-radius: 10px;
+  margin-bottom: 2px;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+}
+
+.inside-grid {
+  display: flex;
+  width: 500px;
+  gap: 12px;
+  margin-bottom: 2px;
+  justify-content: center;
+}
+
+.grid-item-results {
+  border-radius: 20px;
+  border: 2px solid rgb(159, 223, 231);
+  width: 20px; /* Width of the container */
+  height: 20px;
+}
+
+.try-line {
+  display: flex;
+  width: 500px;
+  gap: 12px;
+  margin-bottom: 2px;
+  justify-content: center;
+  align-items: center;
+}
+.square {
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+
+  border-radius: 10px;
+}
+.try-square {
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+
+  border-radius: 40px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 80px;
+  height: 40px;
+  color: #fff;
+  background-color: #3498db; /* Change to your preferred color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+.submit-button:hover {
+  background-color: #2980b9; /* Change to a slightly darker shade */
+  /* Add other hover effects as needed */
 }
 
 .start-btn {

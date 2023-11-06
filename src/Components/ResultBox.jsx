@@ -54,32 +54,34 @@ export const ResultBox = ({
   }
 
   return (
-    <>
-      <div className="square" style={{ backgroundColor: element[0] }}></div>
-      <div className="square" style={{ backgroundColor: element[1] }}></div>
-      <div className="square" style={{ backgroundColor: element[2] }}></div>
-      <div className="square" style={{ backgroundColor: element[3] }}></div>
-      <div className="grid-container-results">
-        <div
-          className="grid-item-results"
-          style={{ backgroundColor: lights[0] }}
-        ></div>
-        <div
-          className="grid-item-results"
-          style={{ backgroundColor: lights[1] }}
-        ></div>
-        <div
-          className="grid-item-results"
-          style={{ backgroundColor: lights[2] }}
-        ></div>
-        <div
-          className="grid-item-results"
-          style={{ backgroundColor: lights[3] }}
-        ></div>
+    <div className="grid-container-lines">
+      <div className="inside-grid">
+        <div className="square" style={{ backgroundColor: element[0] }}></div>
+        <div className="square" style={{ backgroundColor: element[1] }}></div>
+        <div className="square" style={{ backgroundColor: element[2] }}></div>
+        <div className="square" style={{ backgroundColor: element[3] }}></div>
+        <div className="grid-container-results">
+          <div
+            className="grid-item-results"
+            style={{ backgroundColor: lights[0] }}
+          ></div>
+          <div
+            className="grid-item-results"
+            style={{ backgroundColor: lights[1] }}
+          ></div>
+          <div
+            className="grid-item-results"
+            style={{ backgroundColor: lights[2] }}
+          ></div>
+          <div
+            className="grid-item-results"
+            style={{ backgroundColor: lights[3] }}
+          ></div>
+        </div>
       </div>
       {lights[3] === "#00FF00" && (
         <ResultModal generateRandomArray={generateRandomArray} />
       )}
-    </>
+    </div>
   );
 };
