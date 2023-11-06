@@ -49,16 +49,29 @@ body {
   gap: 2px;
 }
 .square {
-  background-color: yellow; /* Adjust the background color of the squares */
-  color: aqua;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin: 5px;
 }
 .hd-square {
-  background-color: orange; /* Adjust the background color of the squares */
-  color: black;
-  width: 100px;
-  height: 100px;
+  background-color: brown; /* Adjust the background color of the squares */
+  color: gold;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.hd-content {
+  text-align: center; /* Center text horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 35px;
 }
 
 .start-btn {

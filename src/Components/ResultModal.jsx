@@ -7,7 +7,7 @@ export const ResultModal = ({ generateRandomArray }) => {
     <dialog open>
       <h2>You Won!</h2>
       <form method="dialog">
-        <button onClick={handleCloseModal}>Close</button>
+        <button onClick={handleCloseModal}>Play Again</button>
       </form>
     </dialog>
   );

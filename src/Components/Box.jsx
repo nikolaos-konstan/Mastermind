@@ -28,8 +28,6 @@ export const Box = ({
         backgroundColor: currentColour,
       }}
       onClick={handleChange}
-    >
-      1
-    </div>
+    ></div>
   );
 };

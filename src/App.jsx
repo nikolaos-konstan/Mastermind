@@ -31,9 +31,17 @@ function App() {
   };
 
   //Conditional Rendering
-  let gameStart = <button onClick={generateRandomArray}>Start Game</button>;
+  let gameStart = (
+    <button onClick={generateRandomArray} className="start-btn">
+      Start Game
+    </button>
+  );
   if (hiddenCombination.length > 0) {
-    gameStart = <button onClick={generateRandomArray}>Restart Game</button>;
+    gameStart = (
+      <button onClick={generateRandomArray} className="start-btn">
+        Restart Game
+      </button>
+    );
   }
   //submit a combination and compare
 
@@ -42,9 +50,12 @@ function App() {
   };
 
   return (
-    <>
+    <div className="main-game">
       {gameStart}
-      <SecretCombo hiddenCombination={hiddenCombination} />
+      <SecretCombo
+        hiddenCombination={hiddenCombination}
+        submittedLines={submittedLines}
+      />
       {
         <div className="grid-container">
           {submittedLines.map((element, index) => (
@@ -69,7 +80,7 @@ function App() {
           hiddenCombination={hiddenCombination}
         />
       )}
-    </>
+    </div>
   );
 }
 
