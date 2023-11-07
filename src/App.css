@@ -28,8 +28,8 @@ body {
 }
 
 .hd-square {
-  background-color: brown; /* Adjust the background color of the squares */
-  color: gold;
+  background-color: #537188; /* Adjust the background color of the squares */
+  color: #f5f0bb;
   justify-content: center;
   align-items: center;
   width: 60px;
@@ -158,4 +158,22 @@ body {
 .start-btn:hover,
 .start-btn:focus {
   background-color: #f082ac;
+}
+
+dialog {
+  border-radius: 10px;
+  border: 0;
+  top: 40%;
+  left: 0;
+  background-color: #fdf4f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 1; /* Place the overlay above other content */
 }
