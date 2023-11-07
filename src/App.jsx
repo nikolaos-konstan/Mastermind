@@ -55,6 +55,7 @@ function App() {
       <SecretCombo
         hiddenCombination={hiddenCombination}
         submittedLines={submittedLines}
+        generateRandomArray={generateRandomArray}
       />
       {
         <div>

@@ -1,24 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Mogra&family=Montserrat&family=Poppins&display=swap");
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #ccf3ee;
+  background-color: #f9f3cc;
 }
 
 .main-game {
-  border: 1px solid #84a6d6; /* Border style */
+  border: 1px solid #f3eeea; /* Border style */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Padding inside the container */
-  background-color: #f8ecd1; /* Background color */
+  background-color: #ebe3d5; /* Background color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
 }
 
 .hidden-combo {
   display: flex;
-  width: 500px;
+  width: 400px;
   gap: 2px;
   margin-bottom: 2px;
   justify-content: center;
@@ -29,8 +32,8 @@ body {
   color: gold;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: 5px;
   border-radius: 40px;
 }
@@ -48,15 +51,15 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 
-  width: 500px;
+  width: 400px;
 }
 
 .grid-container-results {
   display: grid;
-  grid-template-columns: 40px 40px; /* Two columns of 40px each */
-  grid-template-rows: 40px 40px; /* Two rows of 50px each */
-  width: 80px; /* Width of the container */
-  height: 80px; /* Height of the container */
+  grid-template-columns: 30px 30px; /* Two columns of 30px each */
+  grid-template-rows: 30px 30px; /* Two rows of 50px each */
+  width: 60px; /* Width of the container */
+  height: 60px; /* Height of the container */
   border-radius: 10px;
   margin-bottom: 2px;
   justify-content: center;
@@ -66,22 +69,22 @@ body {
 
 .inside-grid {
   display: flex;
-  width: 500px;
+  width: 400px;
   gap: 12px;
   margin-bottom: 2px;
   justify-content: center;
 }
 
 .grid-item-results {
-  border-radius: 20px;
+  border-radius: 15px;
   border: 2px solid rgb(159, 223, 231);
-  width: 20px; /* Width of the container */
-  height: 20px;
+  width: 15px; /* Width of the container */
+  height: 15px;
 }
 
 .try-line {
   display: flex;
-  width: 500px;
+  width: 400px;
   gap: 12px;
   margin-bottom: 2px;
   justify-content: center;
@@ -90,28 +93,28 @@ body {
 .square {
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 
   border-radius: 10px;
 }
 .try-square {
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 
   border-radius: 40px;
 }
 
 .submit-button {
-  padding: 10px 20px;
+  padding: 10px;
   font-size: 12px;
   font-weight: bold;
-  width: 80px;
+  width: 60px;
   height: 40px;
   color: #fff;
-  background-color: #3498db; /* Change to your preferred color */
+  background-color: #ff9b9b; /* Change to your preferred color */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -123,6 +126,36 @@ body {
   /* Add other hover effects as needed */
 }
 
+/* CSS */
 .start-btn {
-  background-color: aqua;
+  background-color: #e9b384;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0 0 10px 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.start-btn:hover,
+.start-btn:focus {
+  background-color: #f082ac;
 }
